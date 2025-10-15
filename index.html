@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clovers Stationery - Where Ideas Bloom</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* ========================================
+           SCHOOL PROJECT BY SAMPADA ARYAL
+           Clovers Stationery - HTML & CSS Only
+           No JavaScript Used
+        ======================================== */
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-color: #a6dcef;
+            --secondary-color: #ffffff;
+            --accent-color: #bce29e;
+            --text-color: #333;
+            --light-gray: #f5f5f5;
+            --discount-color: #ff6b6b;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+            background: linear-gradient(135deg, #a6dcef 0%, #bce29e 100%);
+            background-attachment: fixed;
+        }
+        
+        /* ========================================
+           HEADER & NAVIGATION
+        ======================================== */
+        
+        header {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            animation: slideDown 0.5s ease-out;
+        }
+        
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-color);
+        }
+        
+        /* CSS Clover Icon */
+        .clover-icon {
+            width: 40px;
+            height: 40px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .clover-icon::before,
+        .clover-icon::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: var(--accent-color);
+            border-radius: 50%;
+        }
+        
+        .clover-icon::before {
+            top: 0;
+            left: 10px;
+        }
+        
+        .clover-icon::after {
+            bottom: 0;
+            left: 10px;
+        }
+        
+        .clover-icon span {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: var(--accent-color);
+            border-radius: 50%;
+            top: 10px;
+        }
+        
+        .clover-icon span:first-child {
+            left: 0;
+        }
+        
+        .clover-icon span:last-child {
+            right: 0;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        /* ========================================
+           HERO SECTION
+        ======================================== */
+        
+        .hero {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(rgba(166, 220, 239, 0.8), rgba(188, 226, 158, 0.8)),
+                        url('https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=1200') center/cover;
+            animation: fadeIn 1s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+            animation: fadeIn 1.2s ease-in;
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: var(--text-color);
+            animation: fadeIn 1.4s ease-in;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 3rem;
+            background: var(--secondary-color);
+            color: var(--text-color);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1.6s ease-in;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            background: var(--accent-color);
+        }
+        
+        /* ========================================
+           SHOP SECTION
+        ======================================== */
+        
+        .shop {
+            padding: 4rem 5%;
+            background: rgba(255, 255, 255, 0.9);
+            animation: fadeIn 1s ease-in;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--text-color);
+        }
+        
+        /* Search and Filter Bar */
+        .search-filter-container {
+            max-width: 1400px;
+            margin: 0 auto 3rem;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .search-box {
+            flex: 1;
+            min-width: 250px;
+            position: relative;
+        }
+        
+        .search-box input {
+            width: 100%;
+            padding: 0.8rem 1rem 0.8rem 3rem;
+            border: 2px solid var(--light-gray);
+            border-radius: 25px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .search-box input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 10px rgba(166, 220, 239, 0.3);
+        }
+        
+        .search-box i {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #999;
+        }
+        
+        .filter-sort-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .filter-dropdown,
+        .sort-dropdown {
+            position: relative;
+        }
+        
+        .filter-dropdown select,
+        .sort-dropdown select {
+            padding: 0.8rem 2.5rem 0.8rem 1rem;
+            border: 2px solid var(--light-gray);
+            border-radius: 25px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            background: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            appearance: none;
+        }
+        
+        .filter-dropdown select:hover,
+        .sort-dropdown select:hover {
+            border-color: var(--primary-color);
+        }
+        
+        .filter-dropdown select:focus,
+        .sort-dropdown select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 10px rgba(166, 220, 239, 0.3);
+        }
+        
+        .filter-dropdown::after,
+        .sort-dropdown::after {
+            content: '\f078';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            pointer-events: none;
+            color: var(--text-color);
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            animation: fadeIn 0.8s ease-in;
+            position: relative;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .discount-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: var(--discount-color);
+            color: white;
+            padding: 0.5rem 0.8rem;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            z-index: 10;
+            box-shadow: 0 2px 10px rgba(255, 107, 107, 0.4);
+        }
+        
+        .product-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .product-card:hover .product-image {
+            transform: scale(1.1);
+        }
+        
+        .product-info {
+            padding: 1.5rem;
+            position: relative;
+        }
+        
+        .product-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .product-description {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 1rem;
+            opacity: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .product-card:hover .product-description {
+            opacity: 1;
+            max-height: 100px;
+        }
+        
+        .price-container {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .product-price {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .original-price {
+            font-size: 1rem;
+            color: #999;
+            text-decoration: line-through;
+        }
+        
+        .add-to-cart {
+            width: 100%;
+            padding: 0.8rem;
+            background: var(--accent-color);
+            border: none;
+            border-radius: 25px;
+            color: var(--text-color);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .add-to-cart:hover {
+            background: var(--primary-color);
+            box-shadow: 0 5px 15px rgba(166, 220, 239, 0.4);
+        }
+        
+        /* ========================================
+           ABOUT SECTION
+        ======================================== */
+        
+        .about {
+            padding: 4rem 5%;
+            background: linear-gradient(135deg, rgba(188, 226, 158, 0.3), rgba(166, 220, 239, 0.3));
+            text-align: center;
+            animation: fadeIn 1s ease-in;
+        }
+        
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        
+        /* ========================================
+           CONTACT SECTION
+        ======================================== */
+        
+        .contact {
+            padding: 4rem 5%;
+            background: rgba(255, 255, 255, 0.9);
+            animation: fadeIn 1s ease-in;
+        }
+        
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid var(--light-gray);
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 10px rgba(166, 220, 239, 0.3);
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        .submit-button {
+            width: 100%;
+            padding: 1rem;
+            background: var(--accent-color);
+            border: none;
+            border-radius: 25px;
+            color: var(--text-color);
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .submit-button:hover {
+            background: var(--primary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(166, 220, 239, 0.4);
+        }
+        
+        /* ========================================
+           FOOTER
+        ======================================== */
+        
+        footer {
+            padding: 2rem 5%;
+            background: rgba(255, 255, 255, 0.95);
+            text-align: center;
+            animation: fadeIn 1.5s ease-in;
+        }
+        
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .social-icons a {
+            color: var(--text-color);
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+        
+        .footer-text {
+            font-size: 1rem;
+            color: var(--text-color);
+        }
+        
+        /* ========================================
+           RESPONSIVE DESIGN
+        ======================================== */
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .search-filter-container {
+                flex-direction: column;
+            }
+            
+            .search-box {
+                width: 100%;
+            }
+            
+            .filter-sort-group {
+                width: 100%;
+                justify-content: space-between;
+            }
+            
+            .products-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 1.5rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .products-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        @media (min-width: 1025px) {
+            .products-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ========================================
+         HEADER & NAVIGATION
+         School Project - HTML Structure
+    ======================================== -->
+    <header>
+        <nav>
+            <div class="logo">
+                <div class="clover-icon">
+                    <span></span>
+                    <span></span>
+                </div>
+                Clovers Stationery
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#shop">Shop</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ========================================
+         HERO SECTION
+    ======================================== -->
+    <section id="home" class="hero">
+        <h1>Welcome to Clovers Stationery</h1>
+        <p>Where Ideas Bloom 🌿</p>
+        <a href="#shop" class="cta-button">Shop Now</a>
+    </section>
+
+    <!-- ========================================
+         SHOP SECTION - 24 Products with Search & Filter
+    ======================================== -->
+    <section id="shop" class="shop">
+        <h2 class="section-title">Our Products</h2>
+        
+        <!-- Search and Filter Bar -->
+        <div class="search-filter-container">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search for products...">
+            </div>
+            <div class="filter-sort-group">
+                <div class="filter-dropdown">
+                    <select>
+                        <option value="all">All Categories</option>
+                        <option value="pens">Pens & Pencils</option>
+                        <option value="notebooks">Notebooks</option>
+                        <option value="art">Art Supplies</option>
+                        <option value="organizers">Organizers</option>
+                        <option value="accessories">Accessories</option>
+                    </select>
+                </div>
+                <div class="sort-dropdown">
+                    <select>
+                        <option value="featured">Sort by: Featured</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="name">Name: A to Z</option>
+                        <option value="discount">Best Discount</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        
+        <div class="products-grid">
+            <!-- Product 1 - WITH DISCOUNT -->
+            <div class="product-card">
+                <span class="discount-badge">20% OFF</span>
+                <img src="https://images.pexels.com/photos/1226398/pexels-photo-1226398.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Colorful Pens Set" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">Colorful Gel Pens Set</h3>
+                    <p class="product-description">Set of 12 vibrant gel pens for creative writing</p>
+                    <div class="price-container">
+                        <p class="product-price">Rs. 360</p>
+                        <p class="original-price">Rs. 450</p>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card">
+                <img src="https://images.pexels.com/photos/1925630/pexels-photo-1925630.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Spiral Notebook" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">Spiral Notebook A5</h3>
+                    <p class="product-description">200 pages, perfect for notes and sketches</p>
+                    <div class="price-container">
+                        <p class="product-price">Rs. 180</p>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Product 3 - WITH DISCOUNT -->
+            <div class="product-card">
+                <span class="discount-badge">15% OFF</span>
+                <img src="https://images.pexels.com/photos/4226881/pexels-photo-4226881.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Highlighters" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">Pastel Highlighters</h3>
+                    <p class="product-description">Set of 6 soft pastel highlighters</p>
+                    <div class="price-container">
+                        <p class="product-price">Rs. 272</p>
+                        <p class="original-price">Rs. 320</p>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-card">
+                <img src="https://images.pexels.com/photos/4226896/pexels-photo-4226896.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Sticky Notes" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">Sticky Notes Pack</h3>
+                    <p class="product-description">Colorful sticky notes for quick reminders</p>
+                    <div class="price-container">
+                        <p class="product-price">Rs. 150</p>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Product 5 - WITH DISCOUNT -->
+            <div class="product-card">
+                <span class="discount-badge">25% OFF</span>
+                <img src="https://images.pexels.com/photos/159644/art-supplies-brushes-rulers-scissors-159644.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Pencil Set" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">Premium Pencil Set</h3>
+                    <p class="product-description">Set of 12 graphite pencils (2H to 6B)</p>
+                    <div class="price-container">
+                        <p class="product-price">Rs. 210</p>
+                        <p class="original-price">Rs. 280</p>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Product 6 -->
+            <div class="product-card">
+                <img src="https://images.pexels.com/photos/2781814/pexels-photo-2781814.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Eraser Set" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">Premium Erasers</h3>
+                    <p class="product-description">Soft erasers that don't damage paper</p>
+                    <div class="price-container">
+                        <p class="product-price">Rs. 80</p>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Product 7 -->
+            <div class="product-card">
+                <img src="https://images.pexels.com/photos/207666/pexels-photo-207666.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Ruler Set" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">Geometry Ruler Set</h3>
+                    <p class="product-description">Complete set with ruler, protractor, compass</p>
+                    <div class="price-container">
+                        <p class="product-price">Rs. 220</p>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Product 8 - WITH DISCOUNT -->
+            <div class="product-card">
+                <span class="discount-badge">30% OFF</span>
+                <img src="https://images.pexels.com/photos/1153895/pexels-photo-1153895.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Watercolor Set" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">Watercolor Paint Set</h3>
+                    <p class="product-description">24 vibrant colors with brush</p>
+                    <div class="price-container">
+                        <p class="product-price">Rs. 455</p>
+                        <p class="original-price">Rs. 650</p>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Product 9 -->
+            <div class="product-card">
+                <img src="https://images.pexels.com/photos/1053687/pexels-photo-1053687.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Marker Set" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">Permanent Markers</h3>
+                    <p class="product-description">Pack of 8 bold permanent markers</p>
+                    <div class="price-container">
+                        <p class="product-price">Rs. 380</p>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Product 10 - WITH DISCOUNT -->
+            <div class="product-card">
+                <span class="discount-badge">10% OFF</span>
+                <img src="https://images.pexels.com/photos/4226881/pexels-photo-4226881.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Binder Clips" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">Binder Clips Set</h3>
+                    <p class="product-description">Assorted sizes, 24 pieces</p>
+                    <div class="price-container">
+                        <p class="product-price">Rs. 108</p>
+                        <p class="original-price">Rs. 120</p>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Product 11 -->
+            <div class="product-card">
+                <img src="https://images.pexels.com/photos/6373305/pexels-photo-6373305.jpeg?auto=compress&cs=tinysrgb&w=600" alt="File Folders" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">Colorful File Folders</h3>
+                    <p class="product-description">Set of 6 durable plastic folders</p>
+                    <div class="price-container">
+                        <p class="product-price">Rs. 290</p>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
