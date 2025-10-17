@@ -13,7 +13,7 @@
     
     <style>
         /* ========================================
-           SCHOOL PROJECT BY SAMPADA ARYAL
+           SCHOOL PROJECT
            Clovers Stationery - HTML & CSS Only
            No JavaScript Used
         ======================================== */
@@ -74,6 +74,7 @@
             padding: 1rem 5%;
             max-width: 1400px;
             margin: 0 auto;
+            flex-wrap: wrap;
         }
         
         .logo {
@@ -83,6 +84,21 @@
             font-size: 1.5rem;
             font-weight: 700;
             color: var(--text-color);
+        }
+        
+        /* Mobile Menu Toggle */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text-color);
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+        
+        .menu-toggle:hover {
+            color: var(--primary-color);
         }
         
         /* CSS Clover Icon */
@@ -134,6 +150,11 @@
             display: flex;
             list-style: none;
             gap: 2rem;
+        }
+        
+        /* Hamburger Menu - Hidden by default */
+        #menu-checkbox {
+            display: none;
         }
         
         .nav-links a {
@@ -581,14 +602,51 @@
         ======================================== */
         
         @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            
             .nav-links {
                 flex-direction: column;
-                gap: 1rem;
+                gap: 0;
+                width: 100%;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+                background: white;
+                margin-top: 1rem;
+                border-radius: 10px;
+            }
+            
+            .nav-links li {
+                width: 100%;
+                text-align: center;
+                border-bottom: 1px solid var(--light-gray);
+            }
+            
+            .nav-links li:last-child {
+                border-bottom: none;
+            }
+            
+            .nav-links a {
+                display: block;
+                padding: 1rem;
+            }
+            
+            /* Show menu when checkbox is checked */
+            #menu-checkbox:checked ~ .nav-links {
+                max-height: 300px;
+                padding: 0.5rem 0;
             }
             
             nav {
                 flex-direction: column;
-                gap: 1rem;
+                gap: 0;
+            }
+            
+            .logo {
+                width: 100%;
+                justify-content: space-between;
             }
             
             .hero h1 {
@@ -853,3 +911,251 @@
                         <p class="product-price">Rs. 290</p>
                     </div>
                     <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Product 12 -->
+            <div class="product-card">
+                <img src="https://images.pexels.com/photos/1329296/pexels-photo-1329296.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Ballpoint Pens" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">Classic Ballpoint Pens</h3>
+                    <p class="product-description">Pack of 10 smooth-writing pens</p>
+                    <div class="price-container">
+                        <p class="product-price">Rs. 200</p>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Product 13 - WITH DISCOUNT -->
+            <div class="product-card">
+                <span class="discount-badge">35% OFF</span>
+                <img src="https://images.pexels.com/photos/4348404/pexels-photo-4348404.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Sketchbook" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">Artist Sketchbook</h3>
+                    <p class="product-description">100 pages of thick drawing paper</p>
+                    <div class="price-container">
+                        <p class="product-price">Rs. 273</p>
+                        <p class="original-price">Rs. 420</p>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Product 14 -->
+            <div class="product-card">
+                <img src="https://images.pexels.com/photos/8180089/pexels-photo-8180089.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Scissors" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">Craft Scissors</h3>
+                    <p class="product-description">Sharp and comfortable grip scissors</p>
+                    <div class="price-container">
+                        <p class="product-price">Rs. 160</p>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Product 15 - WITH DISCOUNT -->
+            <div class="product-card">
+                <span class="discount-badge">12% OFF</span>
+                <img src="https://images.pexels.com/photos/6373478/pexels-photo-6373478.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Glue Sticks" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">Glue Stick Pack</h3>
+                    <p class="product-description">Pack of 5 washable glue sticks</p>
+                    <div class="price-container">
+                        <p class="product-price">Rs. 158</p>
+                        <p class="original-price">Rs. 180</p>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Product 16 -->
+            <div class="product-card">
+                <img src="https://images.pexels.com/photos/6373557/pexels-photo-6373557.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Tape Dispenser" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">Desktop Tape Dispenser</h3>
+                    <p class="product-description">Stylish tape dispenser with tape roll</p>
+                    <div class="price-container">
+                        <p class="product-price">Rs. 250</p>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Product 17 - WITH DISCOUNT -->
+            <div class="product-card">
+                <span class="discount-badge">18% OFF</span>
+                <img src="https://images.pexels.com/photos/6238050/pexels-photo-6238050.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Calculator" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">Scientific Calculator</h3>
+                    <p class="product-description">Essential for math and science students</p>
+                    <div class="price-container">
+                        <p class="product-price">Rs. 697</p>
+                        <p class="original-price">Rs. 850</p>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Product 18 -->
+            <div class="product-card">
+                <img src="https://images.pexels.com/photos/4226881/pexels-photo-4226881.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Correction Tape" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">Correction Tape</h3>
+                    <p class="product-description">Pack of 3 easy-to-use correction tapes</p>
+                    <div class="price-container">
+                        <p class="product-price">Rs. 140</p>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Product 19 -->
+            <div class="product-card">
+                <img src="https://images.pexels.com/photos/4226140/pexels-photo-4226140.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Paper Clips" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">Colorful Paper Clips</h3>
+                    <p class="product-description">100 pieces assorted colors</p>
+                    <div class="price-container">
+                        <p class="product-price">Rs. 95</p>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Product 20 - WITH DISCOUNT -->
+            <div class="product-card">
+                <span class="discount-badge">22% OFF</span>
+                <img src="https://images.pexels.com/photos/301703/pexels-photo-301703.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Index Cards" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">Index Cards Pack</h3>
+                    <p class="product-description">100 ruled index cards for studying</p>
+                    <div class="price-container">
+                        <p class="product-price">Rs. 101</p>
+                        <p class="original-price">Rs. 130</p>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Product 21 -->
+            <div class="product-card">
+                <img src="https://images.pexels.com/photos/6373478/pexels-photo-6373478.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Push Pins" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">Decorative Push Pins</h3>
+                    <p class="product-description">50 colorful push pins with box</p>
+                    <div class="price-container">
+                        <p class="product-price">Rs. 110</p>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Product 22 - WITH DISCOUNT -->
+            <div class="product-card">
+                <span class="discount-badge">28% OFF</span>
+                <img src="https://images.pexels.com/photos/4226876/pexels-photo-4226876.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Desk Organizer" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">Desk Organizer</h3>
+                    <p class="product-description">Multi-compartment desk organizer</p>
+                    <div class="price-container">
+                        <p class="product-price">Rs. 374</p>
+                        <p class="original-price">Rs. 520</p>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Product 23 -->
+            <div class="product-card">
+                <img src="https://images.pexels.com/photos/6373288/pexels-photo-6373288.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Washi Tape" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">Washi Tape Set</h3>
+                    <p class="product-description">12 rolls of decorative washi tape</p>
+                    <div class="price-container">
+                        <p class="product-price">Rs. 380</p>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Product 24 - WITH DISCOUNT -->
+            <div class="product-card">
+                <span class="discount-badge">15% OFF</span>
+                <img src="https://images.pexels.com/photos/8111859/pexels-photo-8111859.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Pencil Case" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">Canvas Pencil Case</h3>
+                    <p class="product-description">Large capacity zipper pencil pouch</p>
+                    <div class="price-container">
+                        <p class="product-price">Rs. 289</p>
+                        <p class="original-price">Rs. 340</p>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         ABOUT SECTION
+    ======================================== -->
+    <section id="about" class="about">
+        <h2 class="section-title">About Us</h2>
+        <div class="about-content">
+            <p>
+                <strong>Clovers Stationery</strong> is an online stationery shop project 
+                inspired by Nepal's creativity and simplicity. This website showcases fundamental web design 
+                skills using only HTML and CSS, demonstrating clean layout structure, responsive design, 
+                and interactive visual effects without any JavaScript.
+            </p>
+            <p>
+                The project represents a blend of traditional Nepali aesthetics with modern web design principles, 
+                featuring a calming color palette inspired by Nepal's natural beauty and study culture.
+            </p>
+            <p>
+                Every element on this page—from the smooth animations to the hover effects—is created purely 
+                with CSS, showing the power of modern web styling techniques.
+            </p>
+        </div>
+    </section>
+
+    <!-- ========================================
+         CONTACT SECTION
+    ======================================== -->
+    <section id="contact" class="contact">
+        <h2 class="section-title">Contact Us</h2>
+        <form class="contact-form">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Write your message here..." required></textarea>
+            </div>
+            <button type="submit" class="submit-button">Send Message</button>
+        </form>
+    </section>
+
+    <!-- ========================================
+         FOOTER
+    ======================================== -->
+    <footer>
+        <div class="footer-content">
+            <div class="social-icons">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+            <p class="footer-text">
+                Made with ❤️ in Nepal — Clovers Stationery
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
